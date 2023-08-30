@@ -1,0 +1,58 @@
+*{
+  color: white;
+}
+.bg{
+  background-color:rgba(0, 0, 18, 0.65);
+  min-height: 100vh;
+ 
+}
+
+@media only screen and (min-width: 768px) {
+  .bg-nav{
+    background-color:rgba(0, 0, 18, 0.65);
+    height: 100vh;
+  }
+}
+
+
+.para {
+  display: inline;
+  margin-left: 8px;
+}
+.icons {
+  display: inline;
+}
+.link{
+  text-decoration: none;
+  
+
+}
+
+.link:hover{
+ 
+  font-size: larger;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .left {
+    position:fixed;
+}
+.right{
+  position:fixed;
+  right:0;
+
+}
+.center{
+  
+  margin-left: 230px;
+
+}
+
+  
+
+}
+
+
