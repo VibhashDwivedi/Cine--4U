@@ -29,13 +29,19 @@ const Navbar = () => {
          <Link className='link' to=""><p className='para'> Browse</p></Link>
          <br />
 
-         <h6 className='mt-4 text-white fw-light'>Trending</h6>
+         <h6 className='mt-4 text-white fw-light'>Movies</h6>
        <hr className='me-3'/>
        <i class="fa-solid fa-globe icons mt-2"></i>
-         <Link className='link' to=""><p className='para'> Movies</p></Link>
+         <Link className='link' to="/popularmovie"><p className='para'>Popular</p></Link>
          <br />
          <i class="fa-solid fa-globe icons mt-2"></i>
-         <Link className='link' to=""><p className='para'> TV</p></Link>
+         <Link className='link' to="/nowplaying"><p className='para'>Now Playing</p></Link>
+         <br />
+         <i class="fa-solid fa-globe icons mt-2"></i>
+         <Link className='link' to="/upcomingmovie"><p className='para'>Upcoming</p></Link>
+         <br />
+         <i class="fa-solid fa-globe icons mt-2"></i>
+         <Link className='link' to="/toprated"><p className='para'>Top Rated</p></Link>
          <br />
 
          <h6 className='mt-4 text-white fw-light'>Top Rated</h6>

@@ -34,7 +34,7 @@ const Right = () => {
   return (
     <div>
         <div className='mt-2 mx-2 pt-1'>
-            <input type="text" className='form-control ms-auto w-75 rounded-5'/>
+            <input type="text" className='form-control ms-auto w-75 rounded-5 bar-input'/>
         </div>
 
         <h3 className='mt-2 mx-2  p-1'>Upcoming</h3>
@@ -61,9 +61,9 @@ const Right = () => {
                         </div>
 
                         <div className="col-lg-6 col-md-6">
-                        <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[3]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
+                        <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[1]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
 
-                        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[3]?.release_date}</p>
+                        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[1]?.release_date}</p>
                         </div>
          </div>
                    

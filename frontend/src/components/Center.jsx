@@ -96,7 +96,7 @@ useEffect(() => {
         <div className="main container">
 <div className='mt-4'>
 
-<Swiper className=''
+<Swiper className='swap'
          modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={50}
       slidesPerView={1}
@@ -106,26 +106,47 @@ useEffect(() => {
         autoplay={{ delay: 2000, disableOnInteraction: false }}
        
 
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+      
     >
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[10]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{nowPlaying[10]?.release_date}</p></SwiperSlide>
+       
+        <div className='d-flex mx-2' style={{marginTop:'-45px'}} >
+        <button className='btn btn-outline-light rounded-0 border-2' >{nowPlaying[10]?.release_date}</button>
+        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[10]?.vote_average}</button>
+        </div>
+       
+       
+       
+        
+        </SwiperSlide>
         
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[1]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
-      
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{nowPlaying[1]?.release_date}</p>
+        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
+        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[1]?.release_date}</button>
+        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[1]?.vote_average}</button>
+        </div>
         </SwiperSlide>
 
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[12]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{nowPlaying[12]?.release_date}</p></SwiperSlide>
+        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
+        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[12]?.release_date}</button>
+        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[12]?.vote_average}</button>
+        </div>
+       </SwiperSlide>
         
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[13]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
-
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{nowPlaying[13]?.release_date}</p></SwiperSlide>
+        
+        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
+        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[13]?.release_date}</button>
+        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[13]?.vote_average}</button>
+        </div>
+        </SwiperSlide>
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[14]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
-
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{nowPlaying[14]?.release_date}</p></SwiperSlide>
+        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
+        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[14]?.release_date}</button>
+        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[14]?.vote_average}</button>
+        </div>
+       </SwiperSlide>
 
    
     </Swiper>
@@ -140,40 +161,52 @@ useEffect(() => {
 <h3 className='mt-2   p-1'>Popular Movies</h3>
 <Swiper className=''
          modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={10}
-      slidesPerView={4}
+      spaceBetween={15}
         navigation
         pagination={{ clickable: true }}
        
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
-       
+        // autoplay={{ delay: 2000, disableOnInteraction: false }}
+       breakpoints={{
+    // when window width is >= 640px
+    300: {
+      width: 300,
+      slidesPerView: 2,
+    },
+    640: {
+      width: 640,
+      slidesPerView: 3,
+    },
+    // when window width is >= 768px
+    768: {
+      width: 768,
+      slidesPerView: 4,
+    },
+  }}
 
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
     >
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popular[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{popular[2]?.release_date}</p></SwiperSlide>
+       </SwiperSlide>
         
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popular[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
       
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{popular[3]?.release_date}</p>
+     
         </SwiperSlide>
 
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{popularHindi[4]?.release_date}</p></SwiperSlide>
+        </SwiperSlide>
         
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{popularHindi[5]?.release_date}</p></SwiperSlide>
+       </SwiperSlide>
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{popularHindi[6]?.release_date}</p></SwiperSlide>
+       </SwiperSlide>
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[7]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{popularHindi[7]?.release_date}</p></SwiperSlide>
+       </SwiperSlide>
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[8]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{popularHindi[6]?.release_date}</p></SwiperSlide>
+       </SwiperSlide>
 
    
     </Swiper>
@@ -183,56 +216,84 @@ useEffect(() => {
 <h3 className='mt-2   p-1'>Top Rated Movies</h3>
 <Swiper className=''
          modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={10}
-      slidesPerView={4}
+      spaceBetween={15}
+    
         navigation
         pagination={{ clickable: true }}
        
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
-       
+        // autoplay={{ delay: 2000, disableOnInteraction: false }}
+        breakpoints={{
+          // when window width is >= 640px
+          300: {
+            width: 300,
+            slidesPerView: 2,
+          },
+          640: {
+            width: 640,
+            slidesPerView: 3,
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+            slidesPerView: 4,
+          },
+        }}
 
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+     
     >
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[0]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{topRated[0]?.release_date}</p></SwiperSlide>
+      </SwiperSlide>
         
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[1]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
       
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{topRated[1]?.release_date}</p>
+       
         </SwiperSlide>
 
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{topRated[2]?.release_date}</p></SwiperSlide>
+      </SwiperSlide>
         
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{topRated[3]?.release_date}</p></SwiperSlide>
+      </SwiperSlide>
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{topRated[4]?.release_date}</p></SwiperSlide>
+     </SwiperSlide>
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{topRated[5]?.release_date}</p></SwiperSlide>
+      </SwiperSlide>
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
-        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{topRated[6]?.release_date}</p></SwiperSlide>
+       </SwiperSlide>
         </Swiper>
 </div>
 <div className="mt-3 mb-5">
 <h3 className='mt-2   p-1'>Popular TV Series</h3>
 <Swiper className=''
          modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={10}
-      slidesPerView={4}
+      spaceBetween={15}
+      
         navigation
         pagination={{ clickable: true }}
        
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
-       
+        // autoplay={{ delay: 2000, disableOnInteraction: false }}
+        breakpoints={{
+          // when window width is >= 640px
+          300: {
+            width: 300,
+            slidesPerView: 2,
+          },
+          640: {
+            width: 640,
+            slidesPerView: 3,
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+            slidesPerView: 4,
+          },
+        }}
 
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+     
     >
         <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[0]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[0]?.release_date}</p></SwiperSlide>
