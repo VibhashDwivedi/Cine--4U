@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import  { Navigation, Pagination,  Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -13,6 +13,7 @@ const Center = () => {
     const[topRated, setTopRated] = useState([]);
     const[nowPlaying, setNowPlaying] = useState([]);
     const[tvPopular, setTvPopular]= useState([]);
+    const navigate = useNavigate();
 
 
 const POPULAR = 'https://api.themoviedb.org/3/movie/popular?api_key=3b813a8cad6a0e292c66f061d98d42a8&language=en-US&page=1'
@@ -89,8 +90,8 @@ useEffect(() => {
   return (
     <div>
         <div className="top mt-2 pt-1">
-        <Link to=''><button className='btn btn-outline-secondary text-white'>Movies</button></Link>
-           <Link to=''><button className='btn btn-outline-secondary text-white mx-4'>TV</button></Link>
+        <Link to='/browsemovies'><button className='btn btn-outline-secondary text-white'>Movies</button></Link>
+           <Link to='/browsetv'><button className='btn btn-outline-secondary text-white mx-4'>TV</button></Link>
            </div>     
            
         <div className="main container">
@@ -108,46 +109,59 @@ useEffect(() => {
 
       
     >
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[10]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
-       
+        <SwiperSlide>
+        
+        <Link to={`/movie/${nowPlaying[10]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[10]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."
+          />
+      </Link>
         <div className='d-flex mx-2' style={{marginTop:'-45px'}} >
         <button className='btn btn-outline-light rounded-0 border-2' >{nowPlaying[10]?.release_date}</button>
         <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[10]?.vote_average}</button>
-        </div>
+        </div> 
        
        
        
         
         </SwiperSlide>
         
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[1]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+         <SwiperSlide> 
+         <Link to={`/movie/${nowPlaying[1]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[1]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+     </Link>
         <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
         <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[1]?.release_date}</button>
         <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[1]?.vote_average}</button>
         </div>
-        </SwiperSlide>
-
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[12]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+        </SwiperSlide>  
+         <SwiperSlide>
+         <Link to={`/movie/${nowPlaying[12]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[12]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+    </Link>
         <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
         <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[12]?.release_date}</button>
         <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[12]?.vote_average}</button>
         </div>
-       </SwiperSlide>
-        
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[13]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
-        
+       </SwiperSlide> 
+         <SwiperSlide>
+         <Link to={`/movie/${nowPlaying[13]?.id}`}> 
+          <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[13]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+         </Link>
         <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
         <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[13]?.release_date}</button>
         <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[13]?.vote_average}</button>
         </div>
         </SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${nowPlaying[14]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+         <SwiperSlide>
+         <Link to={`/movie/${nowPlaying[14]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[14]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+     </Link>
         <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
         <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[14]?.release_date}</button>
         <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[14]?.vote_average}</button>
         </div>
        </SwiperSlide>
-
+     
    
     </Swiper>
 
@@ -184,28 +198,44 @@ useEffect(() => {
   }}
 
     >
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popular[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        <SwiperSlide>
+        <Link to={`/movie/${popular[2]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${popular[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+       </Link>
        </SwiperSlide>
         
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popular[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-      
+        <SwiperSlide>
+        <Link to={`/movie/${popular[3]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${popular[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+      </Link>
      
         </SwiperSlide>
 
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        <SwiperSlide>
+        <Link to={`/movie/${popular[4]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${popularHindi[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+       </Link>
         </SwiperSlide>
         
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${popular[5]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${popularHindi[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+</Link>
        </SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${popular[6]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${popularHindi[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+</Link>
        </SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[7]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${popular[7]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${popularHindi[7]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+</Link>
        </SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${popularHindi[8]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${popular[8]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${popularHindi[8]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+</Link>
        </SwiperSlide>
 
    
@@ -241,28 +271,44 @@ useEffect(() => {
 
      
     >
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[0]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        <SwiperSlide>
+        <Link to={`/movie/${topRated[0]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${topRated[0]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+         </Link>
       </SwiperSlide>
         
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[1]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-      
+        <SwiperSlide>
+        <Link to={`/movie/${topRated[1]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${topRated[1]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+      </Link>
        
         </SwiperSlide>
 
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        <SwiperSlide>
+        <Link to={`/movie/${topRated[2]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${topRated[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
       </SwiperSlide>
         
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${topRated[3]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${topRated[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
       </SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${topRated[4]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${topRated[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
      </SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${topRated[5]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${topRated[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
       </SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${topRated[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/movie/${topRated[6]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${topRated[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
        </SwiperSlide>
         </Swiper>
 </div>
@@ -295,28 +341,48 @@ useEffect(() => {
 
      
     >
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[0]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        <SwiperSlide>
+
+
+        <Link to={`/tv/${tvPopular[0]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${tvPopular[0]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+          </Link>
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[0]?.release_date}</p></SwiperSlide>
         
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[1]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-      
+        <SwiperSlide>
+        <Link to={`/tv/${tvPopular[1]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${tvPopular[1]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+      </Link>
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[1]?.release_date}</p>
         </SwiperSlide>
 
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        <SwiperSlide>
+        <Link to={`/tv/${tvPopular[2]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${tvPopular[2]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[2]?.release_date}</p></SwiperSlide>
         
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        <SwiperSlide>
+          
+        <Link to={`/tv/${tvPopular[3]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${tvPopular[3]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
 
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[3]?.release_date}</p></SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/tv/${tvPopular[4]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${tvPopular[4]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[4]?.release_date}</p></SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/tv/${tvPopular[5]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${tvPopular[5]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[5]?.release_date}</p></SwiperSlide>
-        <SwiperSlide><img src={`https://image.tmdb.org/t/p/original/${tvPopular[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
-
+        <SwiperSlide>
+        <Link to={`/tv/${tvPopular[6]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${tvPopular[6]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
+        </Link>
         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{tvPopular[6]?.release_date}</p></SwiperSlide>
         </Swiper>
 </div>

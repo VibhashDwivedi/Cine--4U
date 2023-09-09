@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Right = () => {
 
@@ -33,36 +34,39 @@ const Right = () => {
 
   return (
     <div>
-        <div className='mt-2 mx-2 pt-1'>
-            <input type="text" className='form-control ms-auto w-75 rounded-5 bar-input'/>
-        </div>
+       
 
-        <h3 className='mt-2 mx-2  p-1'>Upcoming</h3>
-            <div className="container">
+        <h2 className='mt-2 mx-2 pt-2 p-1'>Upcoming</h2>
+            <div className="container mt-3">
      <div className="row">
             <div className="col-lg-6 col-md-6">
+                 <Link to={`/movie/${upcoming[11]?.id}`}>
             <img src={`https://image.tmdb.org/t/p/original/${upcoming[11]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
-                        
+                     </Link>   
                         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcoming[11]?.release_date}</p>
                         </div>
 
                         <div className="col-lg-6 col-md-6">
+                        <Link to={`/movie/${upcoming[13]?.id}`}>
                         <img src={`https://image.tmdb.org/t/p/original/${upcoming[13]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
-
+                        </Link>
                         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcoming[13]?.release_date}</p>
                         </div>
          </div>
 
-         <div className="row">
+         <div className="row mt-3">
             <div className="col-lg-6 col-md-6">
+                    <Link to={`/movie/${upcomingHindi[0]?.id}`}>
             <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[0]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
-                        
-                        <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[0]?.release_date}</p>
+
+                    </Link>     
+                         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[0]?.release_date}</p>
                         </div>
 
                         <div className="col-lg-6 col-md-6">
+                        <Link to={`/movie/${upcomingHindi[1]?.id}`}>
                         <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[1]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
-
+                        </Link>
                         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[1]?.release_date}</p>
                         </div>
          </div>

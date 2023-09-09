@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Navbar from './Navbar';
 
-const Movie = () => {
+const TV = () => {
 
     const {id} = useParams();
     const[details,setDetails]=useState([])
 
-    const MOVIE = `https://api.themoviedb.org/3/movie/${id}?api_key=3b813a8cad6a0e292c66f061d98d42a8&language=en-US`
+    const MOVIE = `https://api.themoviedb.org/3/tv/${id}?api_key=3b813a8cad6a0e292c66f061d98d42a8&language=en-US`
 
  const getMovie = async () => {
         const response = await fetch(MOVIE)
@@ -30,9 +30,9 @@ const Movie = () => {
     }
 
     const year = () => {
-        if (details.release_date === undefined) return null;
+        if (details.first_air_date === undefined) return null;
         else
-        return details.release_date.slice(0,4)
+        return details.first_air_date.slice(0,4)
     }
 
     const watch = () => {
@@ -46,7 +46,7 @@ const Movie = () => {
 
   return (
 
-    <div className='bg'>
+    <div className='bg '>
     <div className="row">
     <div className=" col-lg-2 col-md-2  left">
       <Navbar/>
@@ -55,8 +55,8 @@ const Movie = () => {
             
         <div>
         {/* display movie details */}
-        <div className='d-flex justify-content-center align-items-center vh-100'>
-        <div className="card rounded-0 mb-3 bg-movie"  style={{ height:'500px', width:'980px'}}>
+        <div className='d-flex justify-content-center mt-4 vh-100'>
+        <div className="card rounded-0 mb-3 bg-movie"  style={{ height:'600px', width:'980px'}}>
         <div className='d-flex justify-content-center'>
         <div className="card monte-font m-3 mt-4  " style={{maxWidth:'940px', border:'none'}}>
     <div className="row ">
@@ -65,24 +65,29 @@ const Movie = () => {
         </div>
         <div className="col-md-8 ">
         <div className="card-body  text-dark">
-            <h1 className="card-title text-dark fw-bolder">{details.title} 
+            <h1 className="card-title text-dark fw-bolder">{details.name} 
                ({year()})
 
                 </h1>
-            <p className="card-text text-dark">{details.overview}</p>
+            <p className="card-text text-dark" >
+            {details.overview}</p>
+               
             <p>{genre()}</p>
-            <div className="d-flex">
             <p className="card-text text-dark"><span className='fw-bold text-dark fs-5'>Status: </span>{details.status}</p>
-            <p className="card-text text-dark ms-4"><span className='fw-bold text-dark fs-5'>Release Date: </span><small className="text-muted">{details.release_date}</small></p>
+            <div className="d-flex">
+           
+            <p className="card-text text-dark "><span className='fw-bold text-dark fs-5'>First Air Date: </span><small className="text-muted">{details.first_air_date}</small></p>
+            <p className="card-text text-dark ms-4"><span className='fw-bold text-dark fs-5'>Last Air Date: </span><small className="text-muted">{details.last_air_date}</small></p>
             </div>
            
             <div className="d-flex">
-            <p className="card-text text-dark"><span className='fw-bold text-dark fs-5'>Runtime: </span>{details.runtime} mins</p>
-           {/* Languages */}
-              <p className="card-text text-dark ms-4"><span className='fw-bold text-dark fs-5'>Languages: </span>{details.spoken_languages?.map((lang) => (
+           
+            <p className="card-text text-dark "><span className='fw-bold text-dark fs-5'>No. Of Seasons: </span>{details.number_of_seasons}</p>
+            <p className="card-text text-dark ms-4"><span className='fw-bold text-dark fs-5 '>No. Of Episodes: </span>{details.number_of_episodes}</p>
+            </div>
+            <p className="card-text text-dark "><span className='fw-bold text-dark fs-5'>Languages: </span>{details.spoken_languages?.map((lang) => (
                 <span className='badge bg-dark me-2 mt-1 p-2'>{lang.english_name}</span> 
             ))}</p>
-            </div>
             
            <p className="card-text text-dark"><span className='fw-bold text-dark fs-5'>Rating: </span>{details.vote_average}</p>
              <p>{watch()}</p>
@@ -109,4 +114,4 @@ const Movie = () => {
   )
 }
 
-export default Movie
+export default TV

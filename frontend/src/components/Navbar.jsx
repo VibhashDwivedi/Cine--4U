@@ -17,40 +17,46 @@ const Navbar = () => {
        <hr className='me-3'/>
        
        <i class="fa-solid fa-house icons"></i>
-         <Link className='link' to=""><p className='para'> Home</p></Link>
+         <Link className='link' to="/home"><p className='para'> Home</p></Link>
          <br />
        
          
        <i class="fa-solid fa-stopwatch icons mt-2"></i>
-         <Link className='link' to=""><p className='para'>Upcoming</p></Link>
+         <Link className='link' to="/upcomingmovie"><p className='para'> Upcoming</p></Link>
          <br />
          
        <i class="fa-solid fa-globe icons mt-2"></i>
-         <Link className='link' to=""><p className='para'> Browse</p></Link>
+         <Link className='link' to="/browsemovies"><p className='para'> Browse</p></Link>
          <br />
 
          <h6 className='mt-4 text-white fw-light'>Movies</h6>
        <hr className='me-3'/>
-       <i class="fa-solid fa-globe icons mt-2"></i>
+       <i class="fa-solid fa-fire"></i>
          <Link className='link' to="/popularmovie"><p className='para'>Popular</p></Link>
          <br />
-         <i class="fa-solid fa-globe icons mt-2"></i>
+         <i class="fa-solid fa-circle-play"></i>
          <Link className='link' to="/nowplaying"><p className='para'>Now Playing</p></Link>
          <br />
-         <i class="fa-solid fa-globe icons mt-2"></i>
+         <i class="fa-solid fa-stopwatch icons mt-2"></i>
          <Link className='link' to="/upcomingmovie"><p className='para'>Upcoming</p></Link>
          <br />
-         <i class="fa-solid fa-globe icons mt-2"></i>
+         <i class="fa-regular fa-sun"></i>
          <Link className='link' to="/toprated"><p className='para'>Top Rated</p></Link>
          <br />
 
-         <h6 className='mt-4 text-white fw-light'>Top Rated</h6>
+         <h6 className='mt-4 text-white fw-light'>TV</h6>
        <hr className='me-3'/>
-       <i class="fa-solid fa-globe icons mt-2"></i>
-         <Link className='link' to=""><p className='para'> Movies</p></Link>
+       <i class="fa-solid fa-fire"></i>
+         <Link className='link' to="/populartv"><p className='para'>Popular</p></Link>
          <br />
-         <i class="fa-solid fa-globe icons mt-2"></i>
-         <Link className='link' to=""><p className='para'> TV</p></Link>
+         <i class="fa-solid fa-circle-play"></i>
+         <Link className='link' to="/airingtodayeng"><p className='para'>Airing Today</p></Link>
+         <br />
+         <i class="fa-solid fa-circle-play"></i>
+         <Link className='link' to="/ontheair"><p className='para'>On The Air</p></Link>
+         <br />
+         <i class="fa-regular fa-sun"></i>
+         <Link className='link' to="/topratedtv"><p className='para'>Top Rated</p></Link>
          <br />
       
 </div>

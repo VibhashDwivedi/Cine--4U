@@ -56,7 +56,17 @@ const PopularMovie = () => {
           </div>
             <div className="center col-lg-10 col-md-10 ">
                 
-             <h1 className='text-center m-4'> Popular Movies</h1>
+            <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-4">
+            <h1 className='text-center m-4'>Popular Movies</h1>
+            </div>
+            <div className="col-md-4">
+                <Link to='/populartv' className='ms-auto'>
+                <button className="btn btn-primary m-4 float-end">TV</button>
+                </Link>
+            </div>
+         </div> 
 
                 <div className='parent'>
           
