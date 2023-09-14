@@ -26,7 +26,7 @@ return (
     <Routes>
     <Route path="/" element={<Home/>} />
     <Route path="/navbar" element={<Navbar/>} />
-    <Route path="/home" element={<Home/>} />
+    <Route path="/Cine--4U" element={<Home/>} />
     <Route path="/center" element={<Center/>} />
     <Route path="/right" element={<Right/>} />
     <Route path="/popularmovie" element={<PopularMovie/>} />

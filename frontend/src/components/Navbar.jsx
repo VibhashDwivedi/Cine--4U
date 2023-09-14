@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className='bg-black  bg-nav'>
       <div className="container py-3" style={{ marginLeft:'10px'}}>
-      <Link to="/home" style={{textDecoration:'none'}}> <div>
+      <Link to="/Cine--4U" style={{textDecoration:'none'}}> <div>
       <h1 style={{display:'inline', marginTop:'30px',paddingTop:'20px'}} className='text-white'>CINE</h1>
       <p style={{display:'inline', color:'rgba(171, 149, 243, 0.672)'}} className='fs-4 fw-bold for-u'>4U</p>
       </div></Link> 
@@ -15,7 +15,7 @@ const Navbar = () => {
        <hr className='me-3'/>
        
        <i class="fa-solid fa-house icons"></i>
-         <Link className='link' to="/home"><p className='para'> Home</p></Link>
+         <Link className='link' to="/Cine--4U"><p className='para'> Home</p></Link>
          <br />
        
          
