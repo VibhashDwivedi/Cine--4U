@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import PopularMovie from './PopularMovie';
+import Autosuggest from 'react-autosuggest';
+
 
 const BrowseMovies = () => {
 
@@ -14,7 +15,7 @@ const BrowseMovies = () => {
         const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=3b813a8cad6a0e292c66f061d98d42a8&query=${searchQuery}`);
         if (res.status === 200) {
             const data = await res.json();
-            console.log(movieList)
+            
             setmovieList(data.results);
         }
     }
@@ -26,7 +27,7 @@ const BrowseMovies = () => {
 
     const displayMovies = () => {
         if(movieList.length===0){
-            return null;
+            return  null;
         }
         
         return movieList.map((movie) => (
@@ -61,41 +62,64 @@ return(
             </div>
             <div className="col-md-4">
                 <Link to='/browsetv' className='ms-auto'>
-                <button className="btn btn-primary m-4 float-end">TV</button>
+                <button className="btn btn-primary m-4 switch-btn float-end ">TV</button>
                 </Link>
             </div>
          </div>  
        
-        <div className="d-flex justify-content-center align-items-center mb-4 mx-auto">
-            <input
-                type="text"
-                placeholder="Search movies..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        getMovies(); // Call the getMovies function on Enter key press
-                    }
-                }}
-                className="form-control w-50 me-3 px-3 py-2"
-            />
-            <button className='btn btn-danger fw-bold fs-6' onClick={getMovies}>Search</button>
-        </div>
+        {/* <div className="d-flex justify-content-center align-items-center mb-4 mx-auto"> */}
 
-            <div className='parent'>
-      
-       { displayMovies()}
+           
+
+            {/* autosuggest movie name and poster when user inputs using react autosuggest*/}
+
+           
+            <Autosuggest
+                suggestions={movieList}
+                onSuggestionsFetchRequested={getMovies}
+                onSuggestionsClearRequested={() => setmovieList([])}
+                getSuggestionValue={(movie) => movie.title}
+
+                renderSuggestion={(movie) => (
+                    <div className='parent'>
+                       { displayMovies()}
+                    </div>
+                )}
+
+                    
+                inputProps={{
+                    placeholder: "Search movies...",
+                    value: searchQuery,
+                    // text color
+                    style: { color: "black", maxWidth:'500px'},
+                    onChange: (e, { newValue }) => setSearchQuery(newValue),
+                    onKeyDown:(e) => {
+                        if (e.key === 'Enter') {
+                           getMovies(); // Call the getMovies function on Enter key press
+                        }
+                    },
+                   
+                    // use bootstrap class
+                    className: "form-control text-center mx-auto w-75 m-1  px-3 py-2 mb-5  border border-dark rounded-pill shadow-sm",
+
+                }}
+                
+            />
+              
+            
+        </div>
+</div>
        
 
-            </div>
+    
 
-
+           
 
             </div>
-            </div>
+            // </div>
 
             
-            </div>
+           
           )  
   
 
