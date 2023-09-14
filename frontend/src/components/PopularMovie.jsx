@@ -63,7 +63,7 @@ const PopularMovie = () => {
             </div>
             <div className="col-md-4">
                 <Link to='/populartv' className='ms-auto'>
-                <button className="btn btn-primary m-4 float-end">TV</button>
+                <button className="btn btn-primary m-4 switch-btn float-end">TV</button>
                 </Link>
             </div>
          </div> 

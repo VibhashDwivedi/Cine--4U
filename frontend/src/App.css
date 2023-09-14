@@ -1,5 +1,6 @@
 *{
   color: white;
+  font-family: Quicksand;
 }
 .bg{
   background-color:rgba(0, 0, 18, 0.65);
@@ -86,6 +87,13 @@ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 
   
 }
+@media screen and (max-width: 345px) {
+  .parent{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  
+}
 
 .monte-font{
   font-family: Montserrat;
@@ -96,3 +104,34 @@ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
 
 }
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+@media screen     and (max-width: 786px) {
+  .switch-btn{
+    display: none;
+  }
+  }
+@media screen     and (min-width: 786px) {
+  .switch-btn2{
+    display: none;
+  }
+  }
+
+  .for-u{
+    text-shadow: 1px 1px rgb(228, 220, 220);
+  }
+  
+
+
+  
+ 

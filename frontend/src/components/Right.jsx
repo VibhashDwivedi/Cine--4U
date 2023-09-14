@@ -35,8 +35,8 @@ const Right = () => {
   return (
     <div>
        
-
-        <h2 className='mt-2 mx-2 pt-2 p-1'>Upcoming</h2>
+       <Link to="/upcomingmovie" style={{textDecoration:'none', color:'white'}}>
+        <h2 className='mt-2 mx-2 pt-2 p-1'>Upcoming</h2></Link>
             <div className="container mt-3">
      <div className="row">
             <div className="col-lg-6 col-md-6">

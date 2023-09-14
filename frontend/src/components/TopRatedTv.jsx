@@ -62,7 +62,7 @@ const TopRatedTv = () => {
             </div>
             <div className="col-md-4">
                 <Link to='/toprated' className='ms-auto'>
-                <button className="btn btn-primary m-4 float-end">Movies</button>
+                <button className="btn btn-primary m-4 switch-btn float-end">Movies</button>
                 </Link>
             </div>
          </div> 

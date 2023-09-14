@@ -172,7 +172,8 @@ useEffect(() => {
 </div>
 
 <div className="mt-3">
-<h3 className='mt-2   p-1'>Popular Movies</h3>
+<Link to="/popularmovie" style={{textDecoration:'none', color:'white'}}>
+<h3 className='mt-2   p-1'>Popular Movies</h3></Link>
 <Swiper className=''
          modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={15}
@@ -243,7 +244,8 @@ useEffect(() => {
 </div>
 
 <div className="mt-3">
-<h3 className='mt-2   p-1'>Top Rated Movies</h3>
+<Link to="/toprated" style={{textDecoration:'none', color:'white'}}>
+<h3 className='mt-2   p-1'>Top Rated Movies</h3></Link>
 <Swiper className=''
          modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={15}
@@ -313,7 +315,8 @@ useEffect(() => {
         </Swiper>
 </div>
 <div className="mt-3 mb-5">
-<h3 className='mt-2   p-1'>Popular TV Series</h3>
+<Link to="/populartv" style={{textDecoration:'none', color:'white'}}>
+<h3 className='mt-2   p-1'>Popular TV Series</h3></Link>
 <Swiper className=''
          modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={15}
