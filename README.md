@@ -10,6 +10,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
 [Live Demo](https://vibhashdwivedi.github.io/Cine--4U)
 
+
+
+
+https://github.com/VibhashDwivedi/Cine--4U/assets/94799645/a54a1cd3-7cf7-41ef-a2c8-f85dfec712b2
+
+
 ## Screenshots
 ### Homepage
 ![](https://github.com/VibhashDwivedi/Cine--4U/blob/main/Screenshots/1.png?raw=true)
