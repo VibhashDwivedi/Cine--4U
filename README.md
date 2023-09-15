@@ -8,7 +8,7 @@ Use `npm start` to run the app
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
-![Live Demo](https://vibhashdwivedi.github.io/Cine--4U)
+[Live Demo](https://vibhashdwivedi.github.io/Cine--4U)
 
 ## Screenshots
 ### Homepage
