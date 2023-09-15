@@ -55,7 +55,7 @@ const OnTheAir = () => {
           </div>
             <div className="center col-lg-10 col-md-10 ">
                 
-             <h1 className='text-center m-4'> Popular TV Shows</h1>
+             <h1 className='text-center m-4'> On The air</h1>
 
                 <div className='parent'>
           
