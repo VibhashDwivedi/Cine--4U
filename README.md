@@ -49,7 +49,7 @@ https://github.com/VibhashDwivedi/Cine--4U/assets/94799645/a54a1cd3-7cf7-41ef-a2
 ### Browse TV Shows
 ![](https://github.com/VibhashDwivedi/Cine--4U/blob/main/Screenshots/12.png?raw=true)
 
-###Movie Details
+### Movie Details
 ![](https://github.com/VibhashDwivedi/Cine--4U/blob/main/Screenshots/13.png?raw=true)
 
 ![](https://github.com/VibhashDwivedi/Cine--4U/blob/main/Screenshots/14.png?raw=true)
