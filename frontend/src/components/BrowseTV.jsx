@@ -36,7 +36,7 @@ const BrowseMovies = () => {
                 <Link to={`/tv/${movie.id}`}>
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} height={270} className="card-img-top" alt="..."/></Link>
              <div className="card-body" style={{height:'110px'}}>
-            <h5 className="text-dark " >{movie.name}</h5>
+             <Link to={`/movie/${movie.id}`} style={{textDecoration:'none'}} ><h5 className="text-dark " >{movie.name}</h5></Link>
             
             {/* vote average */}
             <p className=" text-dark" style={{marginTop:'-10px'}}><span className='fw-bold text-dark'>Rating:</span> {movie.vote_average}</p>
