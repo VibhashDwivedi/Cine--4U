@@ -53,7 +53,7 @@ const Movie = () => {
       </div>
         <div className="center col-lg-10 col-md-10 ">
             
-        <div>
+        <div className='mobile'>
         {/* display movie details */}
         <div className='d-flex justify-content-center align-items-center vh-100'>
         {/* <div className="card rounded-0 mb-3 bg-movie"  style={{ height:'500px', width:'980px'}}> */}
