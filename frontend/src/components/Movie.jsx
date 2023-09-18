@@ -53,17 +53,17 @@ const Movie = () => {
       </div>
         <div className="center col-lg-10 col-md-10 ">
             
-        <div className='mobile'>
+        <div className=''>
         {/* display movie details */}
         <div className='d-flex justify-content-center align-items-center vh-100'>
         {/* <div className="card rounded-0 mb-3 bg-movie"  style={{ height:'500px', width:'980px'}}> */}
-        <div className='d-flex justify-content-center'>
+        <div className='d-flex justify-content-center mobile '>
         <div className="card monte-font m-3 mt-4  " style={{maxWidth:'940px', border:'none'}}>
     <div className="row ">
         <div className="col-md-4 ">
         <img src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`} className="img-fluid rounded-2 m-3  " alt="..."/>
         </div>
-        <div className="col-md-8 ">
+        <div className="col-md-8 mobile-2">
         <div className="card-body  text-dark">
             <h1 className="card-title text-dark fw-bolder">{details.title} 
                ({year()})
