@@ -10,6 +10,8 @@ const Navbar = () => {
       <p style={{display:'inline', color:'rgba(171, 149, 243, 0.672)'}} className='fs-4 fw-bold for-u'>4U</p>
       </div></Link> 
 
+      
+
     
        <h6 className='mt-4 text-white fw-light'>MENU</h6>
        <hr className='me-3'/>
