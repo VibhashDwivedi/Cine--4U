@@ -99,12 +99,34 @@ useEffect(() => {
 
 <Swiper className='swap'
          modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
+      spaceBetween={15}
+      slidesPerView={3}
         navigation
         pagination={{ clickable: true }}
        
         autoplay={{ delay: 2000, disableOnInteraction: false }}
+
+
+        breakpoints={{
+          // when window width is >= 640px
+  
+          300: {
+            slidesPerView: 1,
+            spaceBetween: 30
+          },
+  
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 15
+          },
+          
+        }}
+
        
 
       
@@ -115,51 +137,41 @@ useEffect(() => {
           <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[10]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."
           />
       </Link>
-        <div className='d-flex mx-2' style={{marginTop:'-45px'}} >
-        <button className='btn btn-outline-light rounded-0 border-2' >{nowPlaying[10]?.release_date}</button>
-        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[10]?.vote_average}</button>
-        </div> 
-       
-       
-       
-        
         </SwiperSlide>
         
-         <SwiperSlide> 
+         <SwiperSlide > 
          <Link to={`/movie/${nowPlaying[1]?.id}`}>
           <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[1]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
      </Link>
-        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
-        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[1]?.release_date}</button>
-        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[1]?.vote_average}</button>
-        </div>
         </SwiperSlide>  
          <SwiperSlide>
          <Link to={`/movie/${nowPlaying[12]?.id}`}>
           <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[12]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
     </Link>
-        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
-        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[12]?.release_date}</button>
-        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[12]?.vote_average}</button>
-        </div>
        </SwiperSlide> 
          <SwiperSlide>
          <Link to={`/movie/${nowPlaying[13]?.id}`}> 
           <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[13]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
          </Link>
-        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
-        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[13]?.release_date}</button>
-        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[13]?.vote_average}</button>
-        </div>
+        
         </SwiperSlide>
          <SwiperSlide>
          <Link to={`/movie/${nowPlaying[14]?.id}`}>
           <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[14]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
      </Link>
-        <div className='d-flex mx-2' style={{marginTop:'-85px'}}>
-        <button className='btn btn-outline-light rounded-0 border-2'  >{nowPlaying[14]?.release_date}</button>
-        <button className='btn btn-outline-light rounded-0  border-2 mx-3'  >{nowPlaying[14]?.vote_average}</button>
-        </div>
+       
+       </SwiperSlide>
+         <SwiperSlide>
+         <Link to={`/movie/${nowPlaying[8]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[8]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+     </Link>
+       
+       </SwiperSlide>
+         <SwiperSlide>
+         <Link to={`/movie/${nowPlaying[15]?.id}`}>
+          <img src={`https://image.tmdb.org/t/p/original/${nowPlaying[15]?.poster_path}`} height={380} className="card-img-top rounded-3 " alt="..."/>
+     </Link>
+       
        </SwiperSlide>
      
    

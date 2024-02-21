@@ -53,9 +53,10 @@ const TV = () => {
       </div>
         <div className="center col-lg-10 col-md-10 ">
             
-        <div>
+        <div >
         {/* display movie details */}
-        <div className='d-flex justify-content-center align-items-center vh-100'>
+        <div className='d-flex justify-content-center align-items-center vh-100' 
+        >
        
         <div className='d-flex justify-content-center mobile'>
         <div className="card monte-font m-3 mt-4  " style={{maxWidth:'940px', border:'none'}}>

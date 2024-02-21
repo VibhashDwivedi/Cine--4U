@@ -41,33 +41,37 @@ const Right = () => {
      <div className="row">
             <div className="col-lg-6 col-md-6">
                  <Link to={`/movie/${upcoming[11]?.id}`}>
-            <img src={`https://image.tmdb.org/t/p/original/${upcoming[11]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
+            <img src={`https://image.tmdb.org/t/p/original/${upcoming[11]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
                      </Link>   
                         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcoming[11]?.release_date}</p>
+                        <p style={{marginTop:'-15px'}} className='text-white mx-2 fw-bold' >{upcoming[11]?.title}</p>
                         </div>
 
                         <div className="col-lg-6 col-md-6">
                         <Link to={`/movie/${upcoming[13]?.id}`}>
-                        <img src={`https://image.tmdb.org/t/p/original/${upcoming[13]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
+                        <img src={`https://image.tmdb.org/t/p/original/${upcoming[13]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
                         </Link>
                         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcoming[13]?.release_date}</p>
+                        <p style={{marginTop:'-15px'}} className='text-white mx-2 fw-bold' >{upcoming[13]?.title}</p>
                         </div>
          </div>
 
          <div className="row mt-3">
             <div className="col-lg-6 col-md-6">
                     <Link to={`/movie/${upcomingHindi[0]?.id}`}>
-            <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[0]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
+            <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[0]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
 
                     </Link>     
                          <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[0]?.release_date}</p>
+                         <p style={{marginTop:'-15px'}}  className='text-white mx-2 fw-bold' >{upcomingHindi[0]?.title}</p>
                         </div>
 
                         <div className="col-lg-6 col-md-6">
                         <Link to={`/movie/${upcomingHindi[1]?.id}`}>
-                        <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[1]?.poster_path}`} height={250} className="card-img-top rounded-3 " alt="..."/>
+                        <img src={`https://image.tmdb.org/t/p/original/${upcomingHindi[1]?.poster_path}`} height={220} className="card-img-top rounded-3 " alt="..."/>
                         </Link>
                         <p style={{marginTop:'-25px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[1]?.release_date}</p>
+                        <p style={{marginTop:'-15px'}} className='text-white mx-2 fw-bold' >{upcomingHindi[1]?.title}</p>
                         </div>
          </div>
                    

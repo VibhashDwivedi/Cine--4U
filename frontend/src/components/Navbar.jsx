@@ -4,15 +4,19 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div className='bg-black  bg-nav'>
+       <nav >
       <div className="container py-3" style={{ marginLeft:'10px'}}>
       <Link to="/Cine--4U" style={{textDecoration:'none'}}> <div>
       <h1 style={{display:'inline', marginTop:'30px',paddingTop:'20px'}} className='text-white'>CINE</h1>
       <p style={{display:'inline', color:'rgba(171, 149, 243, 0.672)'}} className='fs-4 fw-bold for-u'>4U</p>
       </div></Link> 
 
+
+      {/* navbar toggle button */}
+      
       
 
-    
+     <div >
        <h6 className='mt-4 text-white fw-light'>MENU</h6>
        <hr className='me-3'/>
        
@@ -62,9 +66,9 @@ const Navbar = () => {
          <i class="fa-solid fa-globe icons mt-2 switch-btn2"></i>
          <Link className='link' to="/browsetv"><p className='para switch-btn2'> Browse</p></Link>
          <br className='switch-btn2' />
-      
+      </div>
 </div>
-{/* </nav> */}
+</nav>
       </div>
       
       
